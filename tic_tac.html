@@ -1,0 +1,21 @@
+{% extends "layout.html"}
+{% block content %}
+<table class="table table-hover table-dark">
+    <tbody>
+    {% for i in range(3)%}
+    <tr>
+      {%for j in range(3)%}
+        <td>
+          {%if game_state[i][j]%}
+            {{game_state[i][j]}}
+          {% else %}
+            <a href="#">Play {{turn}} here</a>
+          {% endif %}
+        </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
