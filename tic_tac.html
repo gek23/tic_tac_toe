@@ -1,23 +1,24 @@
 <!-- this is the html code containing the board for tic tac toe. Flask/Jinja is being used for this project. -->
 
-{% extends "layout.html"} <!-- this adds onto the existing layout.html. Only changes the content in the body.--> 
+{% extends "layout.html" %}<!-- this adds onto the existing layout.html. Only changes the content in the body.-->
 {% block content %}
 <table class="table table-hover table-dark">
-    <tbody>
-    {% for i in range(3)%}
-    <tr>
-      {%for j in range(3)%}
-        <td>
-          {%if game_state[i][j]%}
-            {{game_state[i][j]}}
-          {% else %}
-            <a href="#">Play {{turn}} here</a>
-          {% endif %}
-        </td>
-      {% endfor %}
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+   <tbody>
+     {% for i in range(3) %}
+     <tr>
+       {% for j in range(3) %}
+         <td>
+           {% if game[i][j] %}
+             {{ game[i][j] }}
+           {% else %}
+             <a href="{{ url_for('play', row=i, col=j) }}"> Play {{ turn }} here</a>
+           {% endif %}
+         </td>
+       {% endfor %}
+     </tr>
+     {% endfor %}
+   </tbody>
+ </table>
 {% endblock %}
+
 
