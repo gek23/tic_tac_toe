@@ -1,3 +1,5 @@
+"""The following code modifies the url and directs the user to the desired page accordingly."""
+
 from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
