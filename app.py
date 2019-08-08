@@ -11,6 +11,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 Session(app)
 
+#the following function contains all the possible winning combinations.
 def is_winner(board):
     if board[0][0] == "O" and board[0][1] == "O" and board[0][2] == "O":
         return "O"
